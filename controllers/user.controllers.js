@@ -89,7 +89,9 @@ const {accessToken, refreshToken} = await generateAccessAndRefereshTokens(user._
 
     const options = {
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: "none",
+        maxAge: 1000 * 60 * 60 * 24 * 10 // 10 days
     }
 
     return res
